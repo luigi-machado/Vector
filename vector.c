@@ -79,6 +79,7 @@ bool remove_elem(item elem, vector *v) {
     if (elem == -1)
         return false;
     remove_at(index, v);
+    return true;
 }
 
 
