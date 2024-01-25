@@ -69,9 +69,11 @@ void move_left(int index, vector *v) {
 }
 
 
-void remove_at(int index, vector *v) {
+item remove_at(int index, vector *v) {
+    item data = elemat(index, v);
     move_left(index, v);
     v->length--;
+    return data;
 }
 
 bool remove_elem(item elem, vector *v) {

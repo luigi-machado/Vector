@@ -43,7 +43,7 @@ void move_right(int index, vector *v);
 void move_left(int index, vector *v);
 
 // Removes the element of a given position
-void remove_at(int index, vector *v);
+item remove_at(int index, vector *v);
 
 /*
     Given an element, searches for its position and removes the first occurence
