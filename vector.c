@@ -16,16 +16,16 @@ void initialize(vector *v) {
 }
 
 
-int length(vector *v) {
+uint32_t length(vector *v) {
     return v->length;
 }
 
 
-int capacity(vector *v) {
+uint32_t capacity(vector *v) {
     return v->capacity;
 }
 
-void resize(vector *v, int new_size) {
+void resize(vector *v, uint32_t new_size) {
     if (new_size < v->length) {
         printf("New size cant be smaller than Vector length\n");
         return;
@@ -57,19 +57,19 @@ void push_back(item i, vector *v) {
 }
 
 
-void move_right(int index, vector *v) {
-    for (int i = length(v); i > index; i--) 
+void move_right(uint32_t index, vector *v) {
+    for (uint32_t i = length(v); i > index; i--) 
         v->list[i] = v->list[i-1];
 }
 
 
-void move_left(int index, vector *v) {
-    for (int i = index; i < length(v) - 1; i++) 
+void move_left(uint32_t index, vector *v) {
+    for (uint32_t i = index; i < length(v) - 1; i++) 
         v->list[i] = v->list[i+1];
 }
 
 
-item remove_at(int index, vector *v) {
+item remove_at(uint32_t index, vector *v) {
     item data = elemat(index, v);
     move_left(index, v);
     v->length--;
@@ -77,7 +77,7 @@ item remove_at(int index, vector *v) {
 }
 
 bool remove_elem(item elem, vector *v) {
-    int index = find(elem, v);
+    uint32_t index = find(elem, v);
     if (elem == -1)
         return false;
     remove_at(index, v);
@@ -90,7 +90,7 @@ void pop_back(vector *v) {
 }
 
 
-bool insert(item i, vector *v, int index) {
+bool insert(item i, vector *v, uint32_t index) {
     if (length(v) >= capacity(v)) {
         v->capacity *= 2;
         resize(v, v->capacity);
@@ -105,7 +105,7 @@ bool insert(item i, vector *v, int index) {
 }
 
 
-item elemat(int index, vector *v) {
+item elemat(uint32_t index, vector *v) {
     if (index < 0 || index >= capacity(v))
     {
         printf("INDEX OUT OF RANGE");
@@ -116,8 +116,8 @@ item elemat(int index, vector *v) {
 }
 
 
-int find(item elem, vector *v) {
-    for (int i = 0; i < length(v); i++) {
+uint32_t find(item elem, vector *v) {
+    for (uint32_t i = 0; i < length(v); i++) {
         if (v->list[i] == elem) 
             return i;
     }
@@ -128,7 +128,7 @@ int find(item elem, vector *v) {
 
 void showVector(vector *v) {
     printf("[ ");
-    for (int i = 0; i < length(v); i++)
+    for (uint32_t i = 0; i < length(v); i++)
     {
         printf("%d ", elemat(i, v));
     }

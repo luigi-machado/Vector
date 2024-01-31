@@ -14,23 +14,23 @@ typedef int32_t item;
 typedef struct vector {
     item *list;
     uint32_t capacity;
-    uint16_t length;
+    uint32_t length;
 } vector;
 
 // Starts the vector
 void initialize(vector *v);
 
 // Returns the length of the vector
-int length(vector *v);
+uint32_t length(vector *v);
 
 // Returns the capacity of the vector
-int capacity(vector *v);
+uint32_t capacity(vector *v);
 
 /*
     Resizes the vector to a given size
     Fails if the new size is smaller than the lenght of the vector
 */
-void resize(vector *v, int new_size);
+void resize(vector *v, uint32_t new_size);
 
 // Shrinks the capacity to the length of the vector
 void shrink_to_fit(vector *v);
@@ -38,12 +38,12 @@ void shrink_to_fit(vector *v);
 // Adds a new item to the end of the vector
 void push_back(item i, vector *v);
 
-void move_right(int index, vector *v);
+void move_right(uint32_t index, vector *v);
 
-void move_left(int index, vector *v);
+void move_left(uint32_t index, vector *v);
 
 // Removes the element of a given position
-item remove_at(int index, vector *v);
+item remove_at(uint32_t index, vector *v);
 
 /*
     Given an element, searches for its position and removes the first occurence
@@ -55,14 +55,14 @@ bool remove_elem(item elem, vector *v);
 void pop_back(vector *v);
 
 // Inserts an element in a given position
-bool insert(item i, vector *v, int index);
+bool insert(item i, vector *v, uint32_t index);
 
 // Returns the element of a given index
-item elemat(int index, vector *v);
+item elemat(uint32_t index, vector *v);
 
 // Searches for a given element in the vector
 // Uses Linear Search
-int find(item elem, vector *v);
+uint32_t find(item elem, vector *v);
 
 // Prints the vector
 void showVector(vector *v);
