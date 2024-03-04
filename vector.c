@@ -57,13 +57,13 @@ void push_back(item i, vector *v) {
 }
 
 
-void move_right(uint32_t index, vector *v) {
+static void move_right(uint32_t index, vector *v) {
     for (uint32_t i = length(v); i > index; i--) 
         v->list[i] = v->list[i-1];
 }
 
 
-void move_left(uint32_t index, vector *v) {
+static void move_left(uint32_t index, vector *v) {
     for (uint32_t i = index; i < length(v) - 1; i++) 
         v->list[i] = v->list[i+1];
 }
