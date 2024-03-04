@@ -38,10 +38,6 @@ void shrink_to_fit(vector *v);
 // Adds a new item to the end of the vector
 void push_back(item i, vector *v);
 
-void move_right(uint32_t index, vector *v);
-
-void move_left(uint32_t index, vector *v);
-
 // Removes the element of a given position
 item remove_at(uint32_t index, vector *v);
 
